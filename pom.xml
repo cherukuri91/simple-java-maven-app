@@ -20,12 +20,13 @@
       <plugin>
         <!-- Build an executable JAR -->
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.0.2</version>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.4</version>
         <configuration>
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
+	      <failOnMissingWebXml>false</failOnMissingWebXml>
               <classpathPrefix>lib/</classpathPrefix>
               <mainClass>com.mycompany.app.App</mainClass>
             </manifest>
