@@ -23,13 +23,17 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.2</version>
         <configuration>
+	<packagingExcludes>
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
 	      <classpathPrefix>lib/</classpathPrefix>
               <mainClass>com.mycompany.app.App</mainClass>
+	      WEB-INF/lib/commans-logging-*.jar,
+	      %regex[WEB-INF/lib/log4j-(?!over-slf4j).*.jar]
             </manifest>
           </archive>
+	</packagingExcludes>
         </configuration>
       </plugin>
     </plugins>
